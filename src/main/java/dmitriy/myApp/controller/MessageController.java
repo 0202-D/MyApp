@@ -28,7 +28,9 @@ public class MessageController {
 
     @PostMapping
     public String SET(@RequestBody String message) {
-        myCash.put(String.valueOf(counter++), message);
+        if (!myCash.containsValue(message)) {
+            myCash.put(String.valueOf(counter++), message);
+        }
         return message;
     }
 
