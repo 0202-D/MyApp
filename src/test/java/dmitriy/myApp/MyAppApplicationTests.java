@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = MyAppApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class MyAppApplicationTests {
-    private Cache cache;
-
     @Test
     public void testCache() {
         Cache cache = new Cache();

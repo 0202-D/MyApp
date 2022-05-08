@@ -14,12 +14,12 @@ public class Cache {
         if (cache.containsKey(key)) {
             return cache.get(key);
         } else {
-            throw new NotFoundException("request by key "+key+" not found");
+            throw new NotFoundException("request by key " + key + " not found");
         }
     }
 
     public String put(String key, String message) {
-        if (key!=null&&message!=null&&!message.equals("")) {
+        if (key != null && message != null && !message.equals("")) {
             cache.put(key, message);
         }
         return message;
@@ -30,6 +30,15 @@ public class Cache {
     }
 
     public void delete(String key) {
-        cache.remove(key);
+        if (cache.containsKey(key)) {
+            cache.remove(key);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Cache{" +
+                "cache=" + cache +
+                '}';
     }
 }
