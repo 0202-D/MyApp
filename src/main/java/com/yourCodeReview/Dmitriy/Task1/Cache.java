@@ -34,11 +34,4 @@ public class Cache {
             cache.remove(key);
         }
     }
-
-    @Override
-    public String toString() {
-        return "Cache{" +
-                "cache=" + cache +
-                '}';
-    }
 }
